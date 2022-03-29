@@ -35,6 +35,42 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
 
+  # For BLoC architecture
+  # https://pub.dev/packages/flutter_bloc
+  flutter_bloc: ^8.0.1 
+  # https://pub.dev/packages/bloc
+  bloc: ^8.0.3
+
+  # For equality comparison
+  # https://pub.dev/packages/equatable
+  equatable: ^2.0.3
+
+  # ReactiveX library for dart
+  # https://pub.dev/packages/rxdart
+  rxdart: ^0.27.3
+
+  # For DI
+  # https://pub.dev/packages/injectable
+  injectable: ^1.5.3
+  # https://pub.dev/packages/get_it
+  get_it: ^7.2.0
+
+  # For navigation control (Do not use this for other purposes!)
+  # https://pub.dev/packages/get
+  get: ^4.6.1
+
+  # For remote api 
+  # https://pub.dev/packages/retrofit
+  retrofit: ^3.0.1+1
+  
+  # For logging
+  # https://pub.dev/packages/logger
+  logger: ^1.1.0
+
+  # For using json annotation
+  # https://pub.dev/packages/json_annotation
+  json_annotation: ^4.4.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -45,6 +81,27 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
+
+  # For DI - code generation
+  # https://pub.dev/packages/injectable_generator
+  injectable_generator: ^1.5.3
+
+  # For test
+  # https://pub.dev/packages/mockito
+  mockito: ^5.1.0
+
+  # For remote api - code generation
+  # https://pub.dev/packages/retrofit_generator
+  retrofit_generator: ^4.0.1
+
+  # For auto code generation
+  # https://pub.dev/packages/build_runner
+  build_runner: ^2.1.8
+
+  # For json serializer/deserializer 
+  # https://pub.dev/packages/json_serializable
+  json_serializable: ^6.1.5
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
