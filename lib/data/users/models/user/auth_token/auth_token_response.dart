@@ -1,3 +1,4 @@
+import 'package:episode_admin/domain/users/entities/auth_token_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'auth_token_response.g.dart';
@@ -9,7 +10,10 @@ class AuthTokenResponse {
   @JsonKey(name: 'refreshToken')
   String? refreshToken;
 
-  AuthTokenResponse({this.accessToken, this.refreshToken});
+  AuthTokenResponse({
+    this.accessToken,
+    this.refreshToken,
+  });
 
   factory AuthTokenResponse.fromJson(Map<String, dynamic> json) =>
       _$AuthTokenResponseFromJson(json);

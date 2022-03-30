@@ -1,21 +1,29 @@
 import 'package:animations/animations.dart';
 import 'package:episode_admin/data/users/datasource/user_datasource.dart';
 import 'package:episode_admin/data/users/models/user/auth_token/auth_token_request.dart';
+import 'package:episode_admin/data/users/repositories/auth_token_repository_impl.dart';
+import 'package:episode_admin/domain/users/usecases/sign_in_usecase.dart';
 import 'package:episode_admin/presentation/admin/login/pages/login.dart';
 import 'package:episode_admin/res/colors.dart';
-import 'package:flutter/material.dart';
 import 'package:episode_admin/routes/routes.dart' as routes;
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:logger/logger.dart';
 
 import 'core/layout/letter_spacing.dart';
 
 Future<void> main() async {
-
   final dataSource = UserDataSource.create();
-  final response = await dataSource.signin(AuthTokenRequest(id: "admin0402", password: "1234567"));
-  var post = response.body;
+  final signInUsecase = SignInUsecase(UsersRepositoryImpl(dataSource));
+  var response = await signInUsecase("admin0402", "12345678");
+  var post = response.fold(
+    (failure) {
+      print("failure: $failure");
+    },
+    (success) {
+      print("success: $success");
+    },
+  );
   runApp(const EpisodeApp());
 }
 
