@@ -1,11 +1,12 @@
 import 'package:animations/animations.dart';
-import 'package:episode_admin/features/login/presentation/pages/login.dart';
-import 'package:episode_admin/layout/letter_spacing.dart';
+import 'package:episode_admin/presentation/admin/login/pages/login.dart';
 import 'package:episode_admin/res/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:episode_admin/routes/routes.dart' as routes;
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'core/layout/letter_spacing.dart';
 
 void main() {
   runApp(const EpisodeApp());

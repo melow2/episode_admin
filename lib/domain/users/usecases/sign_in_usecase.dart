@@ -6,5 +6,6 @@ class SignInUsecase {
 
   const SignInUsecase(this.usersRepository);
 
-  Future<AuthTokenEntity> call() => usersRepository.signIn();
+  Future<AuthTokenEntity> call(String id, String password) =>
+      usersRepository.signIn(id, password);
 }

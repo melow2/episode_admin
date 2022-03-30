@@ -1,5 +1,5 @@
 import 'package:episode_admin/domain/users/entities/auth_token_entity.dart';
 
 abstract class UsersRepository {
-  Future<AuthTokenEntity> signIn();
+  Future<AuthTokenEntity> signIn(String id,String password);
 }
