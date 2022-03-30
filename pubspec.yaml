@@ -60,8 +60,8 @@ dependencies:
   get: ^4.6.1
 
   # For remote api 
-  # https://pub.dev/packages/retrofit
-  retrofit: ^3.0.1+1
+  # https://pub.dev/packages/chopper
+  chopper: ^4.0.5
   
   # For logging
   # https://pub.dev/packages/logger
@@ -70,6 +70,24 @@ dependencies:
   # For using json annotation
   # https://pub.dev/packages/json_annotation
   json_annotation: ^4.4.0
+
+  # For pre-built animations
+  # https://pub.dev/packages/animations
+  animations: ^2.0.2
+
+  # For custom fonts
+  # https://pub.dev/packages/google_fonts
+  google_fonts: ^2.3.1
+
+  # For material design system - screen size, etc.
+  # https://pub.dev/packages/adaptive_breakpoints
+  adaptive_breakpoints: ^0.1.1
+
+  # kotlin data class alternative
+  # https://pub.dev/packages/built_value
+  built_value: ^8.1.4
+
+  rally_assets: ^3.0.1
 
 dev_dependencies:
   flutter_test:
@@ -91,8 +109,8 @@ dev_dependencies:
   mockito: ^5.1.0
 
   # For remote api - code generation
-  # https://pub.dev/packages/retrofit_generator
-  retrofit_generator: ^4.0.1
+  # https://pub.dev/packages/chopper_generator
+  chopper_generator: ^4.0.5
 
   # For auto code generation
   # https://pub.dev/packages/build_runner
@@ -118,6 +136,9 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+  assets:
+    - packages/rally_assets/logo.png
+    - packages/rally_assets/thumb.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
