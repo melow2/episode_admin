@@ -16,7 +16,8 @@ abstract class UserDataSource extends ChopperService {
         {AuthTokenResponse: (jsonData) => AuthTokenResponse.fromJson(jsonData)},
       ),
       interceptors: [
-        EpisodeRequestInterceptor()
+        EpisodeRequestInterceptor(),
+        HttpLoggingInterceptor()
       ]
     );
     return _$UserDataSource(client);

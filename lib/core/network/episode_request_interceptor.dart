@@ -7,7 +7,7 @@ class EpisodeRequestInterceptor implements RequestInterceptor {
   FutureOr<Request> onRequest(Request request) {
     var newRequest = applyHeader(
       request,
-      'Content-type',
+      'Accept',
       'application/json; charset=UTF-8',
     );
     return newRequest;
