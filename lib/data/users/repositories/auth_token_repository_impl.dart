@@ -19,7 +19,9 @@ class UsersRepositoryImpl implements UsersRepository {
   ) async {
     return userDataSource
         .signin(AuthTokenRequest(id: id, password: password))
-        .then((value) =>
-            value.toEither<AuthTokenEntity>((response) => response.toEntity()));
+        .then(
+          (value) => value
+              .toEither<AuthTokenEntity>((response) => response.toEntity()),
+        );
   }
 }

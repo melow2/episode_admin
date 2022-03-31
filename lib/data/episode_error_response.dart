@@ -15,4 +15,5 @@ class EpisodeErrorResponse {
       _$EpisodeErrorResponseFromJson(json);
 
   Map<String, dynamic> toJson() => _$EpisodeErrorResponseToJson(this);
+
 }

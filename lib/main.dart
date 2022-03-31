@@ -18,7 +18,7 @@ Future<void> main() async {
   var response = await signInUsecase("admin0402", "12345678");
   var post = response.fold(
     (failure) {
-      print("failure: $failure");
+      print("failure: ${failure.message}");
     },
     (success) {
       print("success: $success");

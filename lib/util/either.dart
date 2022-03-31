@@ -10,7 +10,7 @@ extension EpisodeEitherExt<R> on Response<R> {
     if (this.body != null) {
       return Right<EpisodeErrorResponse, Entity>(toEntity(this.body!));
     } else {
-      var json = jsonDecode(utf8.decode(bodyBytes));
+      var json = jsonDecode((error?.toString() ?? ""));
       var errorResponse = EpisodeErrorResponse.fromJson(json);
       return Left(errorResponse);
     }
