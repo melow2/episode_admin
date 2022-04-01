@@ -1,17 +1,19 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:chopper/chopper.dart';
+import 'package:episode_admin/data/episode_error_response.dart';
 
-class JsonToTypeConverter extends JsonConverter {
+class EpisodeJsonConverter extends JsonConverter {
   final Map<Type, Function> typeToJsonFactoryMap;
 
-  const JsonToTypeConverter(this.typeToJsonFactoryMap);
+  const EpisodeJsonConverter(this.typeToJsonFactoryMap);
 
   @override
   Response<BodyType> convertResponse<BodyType, InnerType>(Response response) {
     return response.copyWith(
       body: fromJsonData<BodyType, InnerType>(
-        response.body,
+        utf8.decode(response.bodyBytes),
         typeToJsonFactoryMap[InnerType]!,
       ),
     );

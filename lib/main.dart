@@ -1,6 +1,5 @@
 import 'package:animations/animations.dart';
-import 'package:episode_admin/data/users/datasource/user_datasource.dart';
-import 'package:episode_admin/data/users/models/user/auth_token/auth_token_request.dart';
+import 'package:episode_admin/data/users/datasources/user_datasource.dart';
 import 'package:episode_admin/data/users/repositories/auth_token_repository_impl.dart';
 import 'package:episode_admin/domain/users/usecases/sign_in_usecase.dart';
 import 'package:episode_admin/presentation/admin/login/pages/login.dart';
@@ -15,7 +14,7 @@ import 'core/layout/letter_spacing.dart';
 Future<void> main() async {
   final dataSource = UserDataSource.create();
   final signInUsecase = SignInUsecase(UsersRepositoryImpl(dataSource));
-  var response = await signInUsecase("admin0402", "12345678");
+  var response = await signInUsecase("admin0402", "1234567s");
   var post = response.fold(
     (failure) {
       print("failure: ${failure.message}");
@@ -54,7 +53,7 @@ class EpisodeApp extends StatelessWidget {
       ),
       initialRoute: loginRoute,
       routes: <String, WidgetBuilder>{
-        // homeRoute: (context) => const HomePage(),
+        // homeRoute: (context) => const HomePage(),`
         loginRoute: (context) => const LoginPage(),
       },
     );
