@@ -1,8 +1,24 @@
-import 'dart:async';
 import 'dart:convert';
 
 import 'package:chopper/chopper.dart';
+import 'package:dartz/dartz.dart';
 import 'package:episode_admin/data/episode_error_response.dart';
+
+typedef EpisodeResult<T> = Either<EpisodeError, T>;
+
+extension EpisodeEitherExt<R> on Response<R> {
+  EpisodeResult<Entity> toRight<Entity>(Function1<R, Entity> toEntity) {
+    try {
+      if (this.body != null) {
+        return Right<EpisodeError, Entity>(toEntity(this.body!));
+      } else {
+        throw error!;
+      }
+    } catch (e) {
+      rethrow;
+    }
+  }
+}
 
 class EpisodeJsonConverter extends JsonConverter {
   final Map<Type, Function> typeToJsonFactoryMap;
